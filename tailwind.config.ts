@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         orbitron: ['Orbitron', 'sans-serif'],
         rajdhani: ['Rajdhani', 'sans-serif'],
+        'share-tech': ['Share Tech', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

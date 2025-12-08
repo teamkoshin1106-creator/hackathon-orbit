@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech&display=swap');
 
 @layer base {
   :root {
@@ -138,13 +138,11 @@
 
   .btn-register {
     @apply px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300;
-    background: var(--gradient-button);
-    box-shadow: 0 4px 20px hsl(var(--glow-purple) / 0.4);
+    background: hsl(270 80% 35%);
   }
 
   .btn-register:hover {
-    box-shadow: 0 6px 30px hsl(var(--glow-purple) / 0.6),
-                0 0 40px hsl(var(--glow-pink) / 0.3);
+    background: hsl(270 80% 30%);
     transform: translateY(-2px);
   }
 
@@ -156,7 +154,7 @@
   }
 
   .section-title {
-    @apply font-orbitron text-4xl md:text-5xl font-bold text-primary glow-text;
+    @apply font-share-tech text-4xl md:text-5xl font-bold text-primary glow-text;
   }
 
   .theme-card {
@@ -192,6 +190,10 @@
 
   .font-rajdhani {
     font-family: 'Rajdhani', sans-serif;
+  }
+
+  .font-share-tech {
+    font-family: 'Share Tech', sans-serif;
   }
 
   .animate-float {
