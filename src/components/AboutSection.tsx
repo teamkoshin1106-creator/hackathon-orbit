@@ -10,11 +10,14 @@ const AboutSection = () => {
           {/* Content */}
           <div className="space-y-8">
             <div className="glass-card p-8">
-              <h3 className="font-orbitron text-2xl font-bold text-primary mb-4">
+              <h3 className="font-share-tech text-2xl font-bold text-primary mb-4">
                 Hackathon 2026
               </h3>
               <p className="text-foreground/80 text-lg leading-relaxed mb-4">
-                <strong className="text-primary">Venue:</strong> Cambridge Institute of Technology North Campus, Bangalore
+                <strong className="text-primary">Venue:</strong><br />
+                Cambridge Institute of Technology<br />
+                North Campus, Kundana,<br />
+                Bangalore-562110, Karnataka
               </p>
               <p className="text-foreground/80 text-lg leading-relaxed">
                 <strong className="text-primary">Date:</strong> 13th February, 2026 – 14th February, 2026
@@ -22,7 +25,7 @@ const AboutSection = () => {
             </div>
 
             <div className="glass-card p-8">
-              <h3 className="font-orbitron text-2xl font-bold text-primary mb-4">
+              <h3 className="font-share-tech text-2xl font-bold text-primary mb-4">
                 Objective
               </h3>
               <p className="text-foreground/70 text-lg leading-relaxed">
@@ -36,7 +39,7 @@ const AboutSection = () => {
             </div>
 
             <div className="glass-card p-8">
-              <h3 className="font-orbitron text-2xl font-bold text-primary mb-4">
+              <h3 className="font-share-tech text-2xl font-bold text-primary mb-4">
                 Why Participate?
               </h3>
               <p className="text-foreground/70 text-lg leading-relaxed">

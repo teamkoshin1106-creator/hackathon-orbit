@@ -1,23 +1,25 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Download, ChevronDown } from "lucide-react";
+import collegeLogo from "@/assets/college-logo.png";
 
 const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Events", href: "#events" },
-  { name: "Schedule", href: "#schedule" },
-  { name: "Problem Statements", href: "#problems" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Events", href: "/events" },
+  { name: "Schedule", href: "/schedule" },
+  { name: "Problem Statements", href: "/problem-statements" },
   { name: "Downloads", href: "#downloads", hasDropdown: true },
-  { name: "FAQ", href: "#faq" },
-  { name: "Contact Us", href: "#contact" },
+  { name: "FAQ", href: "/faq" },
+  { name: "Contact Us", href: "/contact" },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showDownloads, setShowDownloads] = useState(false);
+  const location = useLocation();
 
   const handleDownload = (type: "schedule" | "brochure") => {
-    // Create a simple downloadable file
     const link = document.createElement("a");
     if (type === "schedule") {
       link.href = "/schedule.pdf";
@@ -30,14 +32,16 @@ const Navbar = () => {
     setShowDownloads(false);
   };
 
+  const isActive = (href: string) => location.pathname === href;
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-t-0 rounded-t-none">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#home" className="font-orbitron text-xl font-bold text-primary glow-text">
-            HACKFINITY
-          </a>
+          <Link to="/" className="flex items-center">
+            <img src={collegeLogo} alt="Cambridge Institute of Technology" className="h-12 w-auto" />
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
@@ -73,15 +77,22 @@ const Navbar = () => {
                     )}
                   </div>
                 ) : (
-                  <a
-                    href={item.href}
-                    className="px-4 py-2 text-foreground/80 hover:text-primary transition-colors font-medium"
+                  <Link
+                    to={item.href}
+                    className={`px-4 py-2 transition-colors font-medium ${
+                      isActive(item.href) ? "text-primary" : "text-foreground/80 hover:text-primary"
+                    }`}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 )}
               </div>
             ))}
+          </div>
+
+          {/* Techfinity Club */}
+          <div className="hidden lg:block font-share-tech text-lg text-primary font-bold">
+            Techfinity Club
           </div>
 
           {/* Mobile Menu Button */}
@@ -96,6 +107,9 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="lg:hidden py-4 border-t border-border animate-slide-up">
+            <div className="text-center pb-4 border-b border-border mb-4">
+              <span className="font-share-tech text-lg text-primary font-bold">Techfinity Club</span>
+            </div>
             {navItems.map((item) => (
               <div key={item.name}>
                 {item.hasDropdown ? (
@@ -119,13 +133,15 @@ const Navbar = () => {
                     </button>
                   </div>
                 ) : (
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="block px-4 py-3 text-foreground/80 hover:text-primary hover:bg-primary/10 transition-colors font-medium"
+                    className={`block px-4 py-3 transition-colors font-medium ${
+                      isActive(item.href) ? "text-primary bg-primary/10" : "text-foreground/80 hover:text-primary hover:bg-primary/10"
+                    }`}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 )}
               </div>
             ))}

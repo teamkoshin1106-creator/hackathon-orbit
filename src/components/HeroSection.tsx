@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import SponsorsSection from "./SponsorsSection";
+import PrizesSection from "./PrizesSection";
+import AssociatedClubsSection from "./AssociatedClubsSection";
 
 const HeroSection = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -31,8 +34,8 @@ const HeroSection = () => {
   }, []);
 
   const CountdownBox = ({ value, label }: { value: number; label: string }) => (
-    <div className="glass-card p-4 md:p-6 min-w-[80px] md:min-w-[100px] animate-pulse-glow">
-      <div className="font-orbitron text-3xl md:text-5xl font-bold text-primary glow-text">
+    <div className="glass-card p-4 md:p-6 min-w-[80px] md:min-w-[100px]">
+      <div className="font-share-tech text-3xl md:text-5xl font-bold text-primary glow-text">
         {value.toString().padStart(2, "0")}
       </div>
       <div className="text-foreground/60 text-sm md:text-base mt-1 font-medium">
@@ -54,14 +57,9 @@ const HeroSection = () => {
       </div>
 
       <div className="text-center z-10">
-        {/* College Name */}
-        <p className="text-foreground/60 text-lg md:text-xl mb-4 font-medium tracking-wide">
-          Cambridge Institute of Technology North Campus, Bangalore
-        </p>
-
         {/* Main Title */}
         <h1
-          className="font-orbitron font-bold text-primary glow-text mb-4 tracking-wider"
+          className="font-share-tech font-bold text-primary glow-text mb-4 tracking-wider"
           style={{ fontSize: "clamp(3rem, 10vw, 85pt)" }}
         >
           HACKFINITY
@@ -73,7 +71,7 @@ const HeroSection = () => {
         </p>
 
         {/* Date */}
-        <p className="font-orbitron text-2xl md:text-3xl text-foreground/90 mb-12">
+        <p className="font-share-tech text-2xl md:text-3xl text-foreground/90 mb-12">
           13th & 14th February 2026
         </p>
 
@@ -90,7 +88,7 @@ const HeroSection = () => {
           href="https://forms.google.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-register inline-block text-secondary-foreground font-orbitron text-xl"
+          className="btn-register inline-block text-secondary-foreground font-share-tech text-xl"
         >
           REGISTER HERE
         </a>
@@ -101,6 +99,21 @@ const HeroSection = () => {
         <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex items-start justify-center p-2">
           <div className="w-1.5 h-3 bg-primary rounded-full animate-pulse" />
         </div>
+      </div>
+
+      {/* Sponsors Section */}
+      <div className="w-full mt-32">
+        <SponsorsSection />
+      </div>
+
+      {/* Prizes Section */}
+      <div className="w-full mt-16">
+        <PrizesSection />
+      </div>
+
+      {/* Associated Clubs Section */}
+      <div className="w-full mt-16 pb-16">
+        <AssociatedClubsSection />
       </div>
     </section>
   );
