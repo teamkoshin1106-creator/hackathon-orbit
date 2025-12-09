@@ -47,13 +47,25 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col items-center justify-center pt-16 px-4 circuit-bg relative overflow-hidden"
+      className="min-h-screen flex flex-col items-center justify-center pt-16 px-4 relative overflow-hidden"
     >
-      {/* Decorative elements */}
+      {/* Futuristic particle/glow effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-glow-purple/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-glow-cyan/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "3s" }} />
-        <div className="absolute top-1/2 right-1/3 w-48 h-48 bg-glow-pink/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1.5s" }} />
+        {/* Large ambient glows */}
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-glow-cyan/20 rounded-full blur-[120px] animate-float" />
+        <div className="absolute bottom-0 right-0 w-[700px] h-[700px] bg-glow-pink/20 rounded-full blur-[150px] animate-float" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-glow-purple/15 rounded-full blur-[100px] animate-float" style={{ animationDelay: "4s" }} />
+        
+        {/* Smaller particle-like glows */}
+        <div className="absolute top-1/4 left-1/3 w-32 h-32 bg-glow-cyan/30 rounded-full blur-2xl animate-pulse-glow" />
+        <div className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-glow-pink/30 rounded-full blur-2xl animate-pulse-glow" style={{ animationDelay: "1s" }} />
+        <div className="absolute top-2/3 left-1/4 w-20 h-20 bg-glow-purple/30 rounded-full blur-xl animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
+        
+        {/* Grid overlay for tech feel */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: `linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)`,
+          backgroundSize: '50px 50px'
+        }} />
       </div>
 
       <div className="text-center z-10">
