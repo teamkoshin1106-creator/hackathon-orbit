@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Download, ChevronDown } from "lucide-react";
-import collegeLogo from "@/assets/college-logo.png";
+import techfinityLogo from "@/assets/techfinity-logo.png";
+import cambridgeLogo from "@/assets/cambridge-logo.png";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -38,9 +39,10 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-t-0 rounded-t-none">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <img src={collegeLogo} alt="Cambridge Institute of Technology" className="h-12 w-auto" />
+          {/* Logos */}
+          <Link to="/" className="flex items-center gap-3">
+            <img src={techfinityLogo} alt="Techfinity Club" className="h-12 w-auto" />
+            <img src={cambridgeLogo} alt="Cambridge Institute of Technology" className="h-12 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -90,9 +92,9 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Techfinity Club */}
-          <div className="hidden lg:block font-share-tech text-lg text-primary font-bold">
-            Techfinity Club
+          {/* Techfinity Club Text */}
+          <div className="hidden lg:flex items-center gap-2">
+            <span className="font-share-tech text-lg text-primary font-bold">Techfinity Club</span>
           </div>
 
           {/* Mobile Menu Button */}
