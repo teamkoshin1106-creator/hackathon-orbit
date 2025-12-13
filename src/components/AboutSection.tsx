@@ -34,7 +34,9 @@ const AboutSection = () => {
                 tech solutions that create meaningful impact. Conducted by Cambridge Institute of 
                 Technology North Campus, this event aims to bring together the brightest developers, 
                 designers, and innovators from across the nation to collaborate, compete, and code 
-                towards a smarter, more sustainable future.
+                towards a smarter, more sustainable future. Through this platform, participants will 
+                not only showcase their technical brilliance but also gain exposure to cutting-edge 
+                technologies, mentorship opportunities, and a thriving community of changemakers.
               </p>
             </div>
 

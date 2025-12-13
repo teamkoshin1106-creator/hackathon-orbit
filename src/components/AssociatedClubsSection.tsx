@@ -3,10 +3,8 @@ import iicLogo from "@/assets/iic-logo.png";
 
 const AssociatedClubsSection = () => {
   const clubs = [
-    { name: "Techfinity Club", logo: techfinityLogo },
     { name: "Institution's Innovation Council", logo: iicLogo },
-    { name: "Coding Club", logo: null },
-    { name: "Robotics Club", logo: null },
+    { name: "Techfinity Club", logo: techfinityLogo },
   ];
 
   return (
@@ -14,7 +12,7 @@ const AssociatedClubsSection = () => {
       <h2 className="section-title text-center mb-12">Associated Clubs</h2>
       
       <div className="glass-card p-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-items-center">
+        <div className="grid grid-cols-2 gap-6 max-w-2xl mx-auto items-center justify-items-center">
           {clubs.map((club, i) => (
             <div
               key={i}
