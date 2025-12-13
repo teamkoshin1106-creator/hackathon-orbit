@@ -93,7 +93,7 @@ const HeroSection = () => {
 
         {/* Register Button */}
         <a
-          href="https://forms.google.com"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdY_6EyONRyy31rzplr5M6CkQ53D0MFLLG_1lxzZBIqOLT0pQ/viewform?usp=dialog"
           target="_blank"
           rel="noopener noreferrer"
           className="btn-register inline-block text-secondary-foreground font-share-tech text-xl"

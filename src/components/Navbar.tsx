@@ -7,9 +7,9 @@ import cambridgeLogo from "@/assets/cambridge-logo.png";
 const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Events", href: "/events" },
   { name: "Schedule", href: "/schedule" },
   { name: "Problem Statements", href: "/problem-statements" },
+  { name: "Registration", href: "/registration" },
   { name: "Downloads", href: "#downloads", hasDropdown: true },
   { name: "FAQ", href: "/faq" },
   { name: "Contact Us", href: "/contact" },
@@ -20,14 +20,17 @@ const Navbar = () => {
   const [showDownloads, setShowDownloads] = useState(false);
   const location = useLocation();
 
-  const handleDownload = (type: "schedule" | "brochure") => {
+  const handleDownload = (type: "schedule" | "brochure" | "ppt") => {
     const link = document.createElement("a");
     if (type === "schedule") {
       link.href = "/schedule.pdf";
       link.download = "HACKFINITY_Schedule.pdf";
-    } else {
+    } else if (type === "brochure") {
       link.href = "/brochure.pdf";
       link.download = "HACKFINITY_Event_Brochure.pdf";
+    } else {
+      link.href = "/downloads/PRESENTATION_FORMAT.pptx";
+      link.download = "HACKFINITY_Presentation_Template.pptx";
     }
     link.click();
     setShowDownloads(false);
@@ -60,7 +63,7 @@ const Navbar = () => {
                       <ChevronDown className="ml-1 h-4 w-4" />
                     </button>
                     {showDownloads && (
-                      <div className="absolute top-full left-0 mt-1 glass-card p-2 min-w-[180px] animate-slide-up">
+                      <div className="absolute top-full left-0 mt-1 glass-card p-2 min-w-[200px] animate-slide-up">
                         <button
                           onClick={() => handleDownload("schedule")}
                           className="flex items-center w-full px-4 py-2 text-foreground/80 hover:text-primary hover:bg-primary/10 rounded-lg transition-colors"
@@ -74,6 +77,13 @@ const Navbar = () => {
                         >
                           <Download className="mr-2 h-4 w-4" />
                           Event Brochure
+                        </button>
+                        <button
+                          onClick={() => handleDownload("ppt")}
+                          className="flex items-center w-full px-4 py-2 text-foreground/80 hover:text-primary hover:bg-primary/10 rounded-lg transition-colors"
+                        >
+                          <Download className="mr-2 h-4 w-4" />
+                          PPT Template
                         </button>
                       </div>
                     )}
@@ -132,6 +142,13 @@ const Navbar = () => {
                     >
                       <Download className="mr-2 h-4 w-4" />
                       Event Brochure
+                    </button>
+                    <button
+                      onClick={() => handleDownload("ppt")}
+                      className="flex items-center w-full px-8 py-2 text-foreground/80 hover:text-primary transition-colors"
+                    >
+                      <Download className="mr-2 h-4 w-4" />
+                      PPT Template
                     </button>
                   </div>
                 ) : (
