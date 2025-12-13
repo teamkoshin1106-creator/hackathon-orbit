@@ -11,6 +11,7 @@ import Registration from "./pages/Registration";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import CrystallineBackground from "./components/CrystallineBackground";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <CrystallineBackground />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
