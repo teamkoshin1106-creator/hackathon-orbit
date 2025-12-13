@@ -1,19 +1,35 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp, Shield, Leaf, Building, Rocket, Sparkles } from "lucide-react";
+import { ChevronDown, ChevronUp, Globe, Shield, Leaf, Building, Sparkles } from "lucide-react";
 
 const themes = [
   {
-    id: "blockchain",
-    title: "Blockchain & Cybersecurity",
+    id: "viksit",
+    title: "Viksit Bharat",
+    icon: Globe,
+    color: "from-indigo-500/20 to-blue-500/20",
+    borderColor: "hover:border-indigo-400/50",
+    description: "Viksit Bharat focuses on building inclusive, tech-driven solutions for national growth. Participants will create innovations that empower youth through better learning, skills, careers, and mental wellbeing. The theme also emphasizes women empowerment, promoting safety, education, financial independence, and healthcare through digital tools. Additionally, it aims to uplift under-economic communities with accessible solutions in education, healthcare, livelihoods, and essential resources.",
+    problems: [
+      { id: "PS101", title: "AI-Powered Career Guidance System for Rural Youth" },
+      { id: "PS102", title: "Digital Platform for Women Safety and Emergency Response" },
+      { id: "PS103", title: "Smart Learning App for Skill Development in Underserved Areas" },
+      { id: "PS104", title: "Mental Health Support Chatbot for Students" },
+      { id: "PS105", title: "Financial Literacy and Microfinance Platform for Women Entrepreneurs" },
+    ],
+  },
+  {
+    id: "aiml",
+    title: "AIML, Blockchain & Cybersecurity",
     icon: Shield,
     color: "from-blue-500/20 to-cyan-500/20",
     borderColor: "hover:border-cyan-400/50",
+    description: "AI/ML, Blockchain & Cybersecurity focuses on building secure and intelligent digital solutions. Participants can use AI/ML to automate tasks, make predictions, and improve decision-making across industries. The Blockchain track encourages transparent, decentralized applications for trust, security, and efficiency. The Cybersecurity track emphasizes protecting data, systems, and users through strong security and privacy-focused innovations.",
     problems: [
-      { id: "PS101", title: "Decentralized Blockchain Platform for Blue Carbon Tracking and Credit Management" },
-      { id: "PS102", title: "Decentralized Blockchain System for Transparent Agri-Supply Chains" },
-      { id: "PS103", title: "AI/ML-Driven Real-Time Email and Web Phishing Protection Platform" },
-      { id: "PS104", title: "Intelligent Firewall System for Dynamic Threat Analysis and Zero Trust Enforcement" },
-      { id: "PS105", title: "Mitigating National Security Threats from AI-Driven Disinformation and LLM Misuse" },
+      { id: "PS201", title: "Decentralized Blockchain Platform for Blue Carbon Tracking and Credit Management" },
+      { id: "PS202", title: "Decentralized Blockchain System for Transparent Agri-Supply Chains" },
+      { id: "PS203", title: "AI/ML-Driven Real-Time Email and Web Phishing Protection Platform" },
+      { id: "PS204", title: "Intelligent Firewall System for Dynamic Threat Analysis and Zero Trust Enforcement" },
+      { id: "PS205", title: "Mitigating National Security Threats from AI-Driven Disinformation and LLM Misuse" },
     ],
   },
   {
@@ -22,12 +38,13 @@ const themes = [
     icon: Leaf,
     color: "from-green-500/20 to-emerald-500/20",
     borderColor: "hover:border-green-400/50",
+    description: "FoodTech, MedTech & AgriTech focus on technology-driven innovation in essential sectors. FoodTech encourages solutions that improve food safety, reduce waste, and promote healthier, smarter consumption. MedTech aims to enhance healthcare through better diagnosis, monitoring, accessibility, and patient-centric systems. AgriTech empowers farmers with smart, sustainable technologies to boost productivity, efficiency, and resilience in agriculture.",
     problems: [
-      { id: "PS201", title: "AI-Powered Image Recognition System for Indian Livestock Breed Identification" },
-      { id: "PS202", title: "AI-Integrated Nutrient Analysis and Practice Management Software for Ayurveda Nutritionists" },
-      { id: "PS203", title: "Blockchain-Based Supply Chain Transparency for Agricultural Produce" },
-      { id: "PS204", title: "AI-powered monitoring of crop health, soil condition, and pest risks using multispectral/hyperspectral imaging and sensor data" },
-      { id: "PS205", title: "AI Tool for Early-Stage Dementia Detection" },
+      { id: "PS301", title: "AI-Powered Image Recognition System for Indian Livestock Breed Identification" },
+      { id: "PS302", title: "AI-Integrated Nutrient Analysis and Practice Management Software for Ayurveda Nutritionists" },
+      { id: "PS303", title: "Blockchain-Based Supply Chain Transparency for Agricultural Produce" },
+      { id: "PS304", title: "AI-powered monitoring of crop health, soil condition, and pest risks using multispectral/hyperspectral imaging and sensor data" },
+      { id: "PS305", title: "AI Tool for Early-Stage Dementia Detection" },
     ],
   },
   {
@@ -36,26 +53,13 @@ const themes = [
     icon: Building,
     color: "from-orange-500/20 to-amber-500/20",
     borderColor: "hover:border-orange-400/50",
+    description: "InfraTech & IoT focus on building smart, connected, and sustainable systems. InfraTech encourages modern solutions for urban development, transportation, utilities, and smart cities using automation and AI-driven monitoring. IoT emphasizes interconnected devices and sensors to enable real-time monitoring, data-driven insights, and automated actions.",
     problems: [
-      { id: "PS301", title: "Waste Segregation Monitoring System for Urban Local Bodies" },
-      { id: "PS302", title: "Developing a real-time Ganga Water Quality Monitoring System using AI, Satellite Data, IoT, and Dynamic Models" },
-      { id: "PS303", title: "AI-Powered Smart Construction Site & Workforce Management System" },
-      { id: "PS304", title: "Smart Parking Detection and Reservation Platform" },
-      { id: "PS305", title: "IoT-Enabled Air Quality and Noise Monitoring Station" },
-    ],
-  },
-  {
-    id: "spacetech",
-    title: "Space Tech",
-    icon: Rocket,
-    color: "from-purple-500/20 to-violet-500/20",
-    borderColor: "hover:border-purple-400/50",
-    problems: [
-      { id: "PS401", title: "Space Debris Detection and Tracking System Using Edge AI and Sensors" },
-      { id: "PS402", title: "AI-Powered Satellite Constellation Management System" },
-      { id: "PS403", title: "Blockchain-Enabled Satellite Data Security and Transmission Verification" },
-      { id: "PS404", title: "AI-Based Space Weather Monitoring and Radiation Prediction" },
-      { id: "PS405", title: "Cybersecurity Framework for Protecting Satellite Communication Channels" },
+      { id: "PS401", title: "Waste Segregation Monitoring System for Urban Local Bodies" },
+      { id: "PS402", title: "Developing a real-time Ganga Water Quality Monitoring System using AI, Satellite Data, IoT, and Dynamic Models" },
+      { id: "PS403", title: "AI-Powered Smart Construction Site & Workforce Management System" },
+      { id: "PS404", title: "Smart Parking Detection and Reservation Platform" },
+      { id: "PS405", title: "IoT-Enabled Air Quality and Noise Monitoring Station" },
     ],
   },
   {
@@ -64,13 +68,13 @@ const themes = [
     icon: Sparkles,
     color: "from-pink-500/20 to-rose-500/20",
     borderColor: "hover:border-pink-400/50",
+    description: "This category allows participants to solve any real-world problem of their choice. It encourages creative, flexible, and innovative tech solutions beyond the defined themes.",
     problems: [],
-    description: `The Miscellaneous theme is designed for teams that showcase exceptional creativity, innovation, or interdisciplinary skills. Teams under this theme will not submit a specific problem statement in advance. Instead, they will be selected based on the quality and originality of their submissions in other themes. Selected teams will be given a surprise problem statement at the start of the hackathon, which they must ideate, design, and develop within the given time frame. This ensures that only the most adaptable and high-performing teams—those capable of solving complex, real-world problems under pressure—qualify for this category.`,
   },
 ];
 
 const ProblemStatementsSection = () => {
-  const [expandedTheme, setExpandedTheme] = useState<string | null>("blockchain");
+  const [expandedTheme, setExpandedTheme] = useState<string | null>("viksit");
 
   return (
     <section id="problems" className="py-20 px-4 circuit-bg">
@@ -91,13 +95,13 @@ const ProblemStatementsSection = () => {
             >
               <button
                 onClick={() => setExpandedTheme(expandedTheme === theme.id ? null : theme.id)}
-                className="w-full flex items-center justify-between p-2"
+                className="w-full flex items-center justify-between p-4"
               >
                 <div className="flex items-center gap-4">
                   <div className="p-3 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20">
                     <theme.icon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="font-orbitron text-xl font-bold text-foreground">
+                  <h3 className="font-share-tech text-xl font-bold text-foreground">
                     {theme.title}
                   </h3>
                 </div>
@@ -110,30 +114,37 @@ const ProblemStatementsSection = () => {
 
               <div
                 className={`overflow-hidden transition-all duration-500 ${
-                  expandedTheme === theme.id ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
+                  expandedTheme === theme.id ? "max-h-[1500px] opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
-                <div className="p-4 pt-0 space-y-3">
-                  {theme.problems.length > 0 ? (
-                    theme.problems.map((problem, index) => (
-                      <div
-                        key={problem.id}
-                        className="glass-card p-4 hover:border-primary/30 transition-all duration-300"
-                        style={{ animationDelay: `${index * 100}ms` }}
-                      >
-                        <div className="flex gap-4">
-                          <span className="font-orbitron text-primary font-bold shrink-0">
-                            {problem.id}
-                          </span>
-                          <p className="text-foreground/80">{problem.title}</p>
+                <div className="p-4 pt-0 space-y-4">
+                  {/* Theme Description */}
+                  <div className="glass-card p-5 border-l-4 border-l-primary/50">
+                    <p className="text-foreground/70 leading-relaxed">
+                      {theme.description}
+                    </p>
+                  </div>
+
+                  {/* Problem Statements */}
+                  {theme.problems.length > 0 && (
+                    <div className="space-y-3">
+                      <h4 className="font-share-tech text-lg text-primary/80 font-semibold px-2">
+                        Problem Statements
+                      </h4>
+                      {theme.problems.map((problem, index) => (
+                        <div
+                          key={problem.id}
+                          className="glass-card p-4 hover:border-primary/30 transition-all duration-300"
+                          style={{ animationDelay: `${index * 100}ms` }}
+                        >
+                          <div className="flex gap-4">
+                            <span className="font-share-tech text-primary font-bold shrink-0">
+                              {problem.id}
+                            </span>
+                            <p className="text-foreground/80">{problem.title}</p>
+                          </div>
                         </div>
-                      </div>
-                    ))
-                  ) : (
-                    <div className="glass-card p-6">
-                      <p className="text-foreground/70 leading-relaxed">
-                        {theme.description}
-                      </p>
+                      ))}
                     </div>
                   )}
                 </div>
