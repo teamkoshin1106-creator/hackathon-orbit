@@ -70,6 +70,69 @@ const Registration = () => {
                 </div>
               </div>
 
+              {/* Hackathon Rounds & Evaluation */}
+              <div className="mt-12 glass-card p-8 md:p-10">
+                <h3 className="font-share-tech text-2xl font-bold text-center mb-10">
+                  <span className="text-gradient">Hackathon Rounds</span> & Evaluation
+                </h3>
+                
+                <div className="space-y-6">
+                  {/* Round 1 */}
+                  <div className="relative pl-6 md:pl-8 border-l-2 border-primary/30">
+                    <div className="absolute -left-4 top-0 w-8 h-8 rounded-full bg-gradient-to-br from-primary to-primary/50 flex items-center justify-center font-share-tech font-bold text-primary-foreground text-sm">
+                      01
+                    </div>
+                    <div className="glass-card p-6 ml-4 bg-primary/5 border-primary/20">
+                      <h4 className="font-share-tech text-lg font-bold text-primary mb-3">
+                        Round 1: Idea Selection
+                      </h4>
+                      <p className="text-foreground/70 leading-relaxed">
+                        The initial screening round where teams submit their idea using the official idea template. 
+                        Ideas are evaluated based on <span className="text-primary font-medium">innovation</span>, 
+                        <span className="text-secondary font-medium"> feasibility</span>, and 
+                        <span className="text-accent font-medium"> impact</span>. Only shortlisted teams move forward to the hackathon.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Round 2 */}
+                  <div className="relative pl-6 md:pl-8 border-l-2 border-secondary/30">
+                    <div className="absolute -left-4 top-0 w-8 h-8 rounded-full bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center font-share-tech font-bold text-secondary-foreground text-sm">
+                      02
+                    </div>
+                    <div className="glass-card p-6 ml-4 bg-secondary/5 border-secondary/20">
+                      <h4 className="font-share-tech text-lg font-bold text-secondary mb-3">
+                        Round 2: Prototype Development & Presentation
+                      </h4>
+                      <p className="text-foreground/70 leading-relaxed">
+                        Shortlisted teams participate in the <span className="text-secondary font-medium">24-hour hackathon</span>. 
+                        Teams build and present a working prototype of their solution. This round focuses on 
+                        <span className="text-primary font-medium"> execution</span>, 
+                        <span className="text-secondary font-medium"> technical depth</span>, and 
+                        <span className="text-accent font-medium"> creativity</span>.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Round 3 */}
+                  <div className="relative pl-6 md:pl-8 border-l-2 border-accent/30">
+                    <div className="absolute -left-4 top-0 w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent/50 flex items-center justify-center font-share-tech font-bold text-accent-foreground text-sm">
+                      03
+                    </div>
+                    <div className="glass-card p-6 ml-4 bg-accent/5 border-accent/20">
+                      <h4 className="font-share-tech text-lg font-bold text-accent mb-3">
+                        Round 3: Final Presentation & Judging
+                      </h4>
+                      <p className="text-foreground/70 leading-relaxed">
+                        The final evaluation round where teams present their completed solution to the judging panel. 
+                        Presentations are followed by a <span className="text-accent font-medium">Q&A session</span>. 
+                        Final rankings and winners are decided based on comprehensive evaluation criteria.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Submission Guidelines */}
               <div className="mt-12 glass-card p-8">
                 <h3 className="font-share-tech text-xl font-bold text-foreground mb-6">

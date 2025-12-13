@@ -44,8 +44,8 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logos */}
           <Link to="/" className="flex items-center gap-3">
-            <img src={cambridgeLogo} alt="Cambridge Institute of Technology" className="h-12 w-auto" />
-            <img src={techfinityLogo} alt="Techfinity Club" className="h-12 w-auto" />
+            <img src={cambridgeLogo} alt="Cambridge Institute of Technology" className="h-10 w-auto rounded-md" />
+            <img src={techfinityLogo} alt="Techfinity Club" className="h-10 w-auto rounded-md" />
           </Link>
 
           {/* Desktop Navigation */}
