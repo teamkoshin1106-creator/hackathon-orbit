@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import SponsorsSection from "./SponsorsSection";
 import PrizesSection from "./PrizesSection";
 import AssociatedClubsSection from "./AssociatedClubsSection";
+import InstructionsSection from "./InstructionsSection";
 
 const HeroSection = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -61,11 +62,6 @@ const HeroSection = () => {
         <div className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-glow-pink/30 rounded-full blur-2xl animate-pulse-glow" style={{ animationDelay: "1s" }} />
         <div className="absolute top-2/3 left-1/4 w-20 h-20 bg-glow-purple/30 rounded-full blur-xl animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
         
-        {/* Grid overlay for tech feel */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)`,
-          backgroundSize: '50px 50px'
-        }} />
       </div>
 
       <div className="text-center z-10">
@@ -79,7 +75,7 @@ const HeroSection = () => {
 
         {/* Tagline */}
         <p className="text-foreground/70 text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
-          Enter the nexus of innovation. Where ideas turn into impact.
+          Powering the Next Generation of Innovation.
         </p>
 
         {/* Date */}
@@ -106,15 +102,13 @@ const HeroSection = () => {
         </a>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex items-start justify-center p-2">
-          <div className="w-1.5 h-3 bg-primary rounded-full animate-pulse" />
-        </div>
+      {/* Instructions Section */}
+      <div className="w-full mt-20 z-10">
+        <InstructionsSection />
       </div>
 
       {/* Sponsors Section */}
-      <div className="w-full mt-32">
+      <div className="w-full mt-20">
         <SponsorsSection />
       </div>
 
