@@ -36,9 +36,14 @@ const InstructionsSection = () => {
               </div>
               <div className="absolute inset-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent opacity-50 blur-lg" />
             </div>
-            <h2 className="font-share-tech text-xl md:text-2xl font-bold text-gradient">
-              Important Instructions
-            </h2>
+            <div className="text-left">
+              <h2 className="font-share-tech text-xl md:text-2xl font-bold text-gradient">
+                Important Instructions
+              </h2>
+              <p className="text-foreground/60 text-sm mt-1">
+                Please read the following instructions carefully before registering for HACKFINITY.
+              </p>
+            </div>
           </div>
           <div className={`p-3 rounded-full bg-primary/10 border border-primary/30 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
             <ChevronDown className="w-5 h-5 text-primary" />
@@ -49,10 +54,6 @@ const InstructionsSection = () => {
         <div className={`transition-all duration-500 ease-in-out overflow-hidden ${isOpen ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}>
           <div className="px-6 pb-6 md:px-8 md:pb-8">
             <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent mb-6" />
-            
-            <p className="text-foreground/70 mb-6 text-center">
-              Please read the following instructions carefully before registering for HACKFINITY:
-            </p>
             
             <div className="grid gap-3">
               {instructions.map((instruction, index) => (
