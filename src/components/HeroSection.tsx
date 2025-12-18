@@ -124,14 +124,14 @@ const HeroSection = () => {
         <InstructionsSection />
       </div>
 
-      {/* Sponsors Section */}
-      <div className="w-full mt-20">
-        <SponsorsSection />
-      </div>
-
       {/* Prizes Section */}
       <div className="w-full mt-16">
         <PrizesSection />
+      </div>
+
+      {/* Sponsors Section */}
+      <div className="w-full mt-20">
+        <SponsorsSection />
       </div>
 
       {/* Associated Clubs Section */}

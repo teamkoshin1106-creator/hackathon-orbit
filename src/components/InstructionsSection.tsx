@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, Sparkles } from "lucide-react";
+import { ChevronDown, FileText } from "lucide-react";
 
 const InstructionsSection = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,19 +31,14 @@ const InstructionsSection = () => {
         >
           <div className="flex items-center gap-4">
             <div className="relative">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center animate-pulse-glow">
-                <Sparkles className="text-primary-foreground w-6 h-6" />
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center">
+                <FileText className="text-primary-foreground w-6 h-6" />
               </div>
               <div className="absolute inset-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent opacity-50 blur-lg" />
             </div>
-            <div className="text-left">
-              <h2 className="font-share-tech text-xl md:text-2xl font-bold text-gradient">
-                Important Instructions
-              </h2>
-              <p className="text-foreground/60 text-sm mt-1">
-                {instructions.length} guidelines for participants
-              </p>
-            </div>
+            <h2 className="font-share-tech text-xl md:text-2xl font-bold text-gradient">
+              Important Instructions
+            </h2>
           </div>
           <div className={`p-3 rounded-full bg-primary/10 border border-primary/30 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
             <ChevronDown className="w-5 h-5 text-primary" />
