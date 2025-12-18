@@ -17,50 +17,42 @@ const PrizesSection = () => {
       <div className="text-center mb-16 relative">
         {/* Background glow effects */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-96 h-96 bg-gradient-to-r from-primary/30 via-secondary/30 to-accent/30 rounded-full blur-3xl animate-pulse" />
+          <div className="w-80 h-80 bg-gradient-to-r from-yellow-400/20 via-amber-500/20 to-yellow-300/20 rounded-full blur-3xl" />
         </div>
         
         <div className="relative inline-block">
           {/* Outer glow ring */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-md opacity-60 animate-pulse" />
+          <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400/60 via-amber-500/60 to-yellow-300/60 rounded-3xl blur-md opacity-50" />
           
           {/* Main card */}
-          <div className="relative glass-card px-8 md:px-16 py-10 md:py-12 border-2 border-primary/40 bg-background/80 backdrop-blur-xl rounded-3xl overflow-hidden">
-            {/* Animated background pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 left-0 w-32 h-32 bg-primary rounded-full blur-2xl animate-float" />
-              <div className="absolute bottom-0 right-0 w-40 h-40 bg-accent rounded-full blur-2xl animate-float" style={{ animationDelay: '1s' }} />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-secondary rounded-full blur-2xl animate-pulse-glow" />
-            </div>
+          <div className="relative glass-card px-10 md:px-20 py-8 md:py-10 border-2 border-yellow-400/30 bg-background/90 backdrop-blur-xl rounded-3xl overflow-hidden">
+            {/* Subtle corner accents */}
+            <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-yellow-400/40 rounded-tl-3xl" />
+            <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-yellow-400/40 rounded-br-3xl" />
             
-            {/* Trophy icons with glow */}
-            <div className="flex items-center justify-center gap-6 md:gap-10">
-              <div className="relative">
-                <div className="absolute inset-0 bg-yellow-400/50 blur-xl rounded-full" />
-                <Trophy className="relative w-10 h-10 md:w-14 md:h-14 text-yellow-400 drop-shadow-lg" />
-              </div>
+            <div className="flex items-center justify-center gap-4 md:gap-6">
+              {/* Left Trophy - smaller, positioned beside text */}
+              <Trophy className="w-8 h-8 md:w-10 md:h-10 text-yellow-400 flex-shrink-0" />
               
               <div className="text-center">
-                <p className="text-foreground/70 text-base md:text-lg mb-2 font-medium tracking-wide">
+                <p className="text-foreground/60 text-sm md:text-base mb-1 font-medium tracking-widest uppercase">
                   Total Prize Pool Worth
                 </p>
                 <div className="relative">
-                  <p className="font-share-tech text-5xl md:text-7xl font-bold bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent drop-shadow-2xl">
+                  <p className="font-share-tech text-4xl md:text-6xl font-bold bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent">
                     ₹3+ Lakhs
                   </p>
                   {/* Shimmer effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 animate-shimmer" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12 animate-shimmer" />
                 </div>
               </div>
               
-              <div className="relative">
-                <div className="absolute inset-0 bg-yellow-400/50 blur-xl rounded-full" />
-                <Trophy className="relative w-10 h-10 md:w-14 md:h-14 text-yellow-400 drop-shadow-lg" />
-              </div>
+              {/* Right Trophy - smaller, positioned beside text */}
+              <Trophy className="w-8 h-8 md:w-10 md:h-10 text-yellow-400 flex-shrink-0" />
             </div>
             
             {/* Decorative bottom line */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent" />
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-yellow-400/60 to-transparent" />
           </div>
         </div>
       </div>

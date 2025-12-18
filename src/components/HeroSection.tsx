@@ -70,23 +70,21 @@ const HeroSection = () => {
           className="font-share-tech font-bold mb-4 tracking-wider relative"
           style={{ fontSize: "clamp(3rem, 10vw, 85pt)" }}
         >
-          <span className="relative inline-block">
-            {/* Background glow layers */}
-            <span className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent blur-2xl opacity-60 animate-pulse" />
-            <span className="absolute inset-0 bg-gradient-to-br from-glow-pink via-glow-purple to-primary blur-xl opacity-40" />
-            
-            {/* Main text with gradient */}
-            <span className="relative bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent drop-shadow-2xl">
-              HACKFINITY
-            </span>
-            
-            {/* Subtle outline effect */}
-            <span 
-              className="absolute inset-0 bg-gradient-to-r from-glow-cyan via-glow-pink to-glow-purple bg-clip-text text-transparent opacity-30 blur-[1px]"
-              aria-hidden="true"
-            >
-              HACKFINITY
-            </span>
+          <span 
+            className="relative inline-block text-primary"
+            style={{
+              backgroundImage: `
+                linear-gradient(135deg, transparent 20%, hsl(var(--secondary) / 0.3) 25%, transparent 30%),
+                linear-gradient(45deg, transparent 40%, hsl(var(--accent) / 0.2) 45%, transparent 50%),
+                linear-gradient(90deg, transparent 60%, hsl(var(--glow-purple) / 0.25) 65%, transparent 70%),
+                linear-gradient(180deg, transparent 70%, hsl(var(--primary) / 0.15) 75%, transparent 80%)
+              `,
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              textShadow: '0 0 40px hsl(var(--primary) / 0.3), 0 2px 0 hsl(var(--primary) / 0.1)'
+            }}
+          >
+            HACKFINITY
           </span>
         </h1>
 
