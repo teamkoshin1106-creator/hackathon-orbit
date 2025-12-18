@@ -1,6 +1,9 @@
-import { Zap } from "lucide-react";
+import { useState } from "react";
+import { ChevronDown, Sparkles } from "lucide-react";
 
 const InstructionsSection = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const instructions = [
     "Each team must consist of exactly 4 participants.",
     "Participants from all colleges and institutions are eligible to participate.",
@@ -20,36 +23,68 @@ const InstructionsSection = () => {
 
   return (
     <div className="container mx-auto px-4">
-      <div className="glass-card p-8 md:p-10 max-w-4xl mx-auto border-l-4 border-l-primary">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center">
-            <Zap className="text-primary w-5 h-5" />
-          </div>
-          <h2 className="font-share-tech text-2xl md:text-3xl font-bold text-foreground">
-            Important Instructions
-          </h2>
-        </div>
-        
-        <p className="text-foreground/70 mb-8 text-lg">
-          Please read the following instructions carefully before registering for HACKFINITY:
-        </p>
-        
-        <div className="grid gap-3">
-          {instructions.map((instruction, index) => (
-            <div 
-              key={index}
-              className="group flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-primary/5 to-secondary/5 border border-primary/10 hover:border-primary/40 hover:from-primary/10 hover:to-secondary/10 transition-all duration-300"
-            >
-              <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center border border-primary/30 group-hover:border-primary/50 transition-colors">
-                <span className="font-share-tech text-sm text-primary font-bold">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
+      <div className="glass-card max-w-4xl mx-auto overflow-hidden">
+        {/* Dropdown Header */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="w-full p-6 md:p-8 flex items-center justify-between hover:bg-primary/5 transition-colors duration-300"
+        >
+          <div className="flex items-center gap-4">
+            <div className="relative">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center animate-pulse-glow">
+                <Sparkles className="text-primary-foreground w-6 h-6" />
               </div>
-              <p className="text-foreground/80 leading-relaxed pt-1">
-                {instruction}
+              <div className="absolute inset-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent opacity-50 blur-lg" />
+            </div>
+            <div className="text-left">
+              <h2 className="font-share-tech text-xl md:text-2xl font-bold text-gradient">
+                Important Instructions
+              </h2>
+              <p className="text-foreground/60 text-sm mt-1">
+                {instructions.length} guidelines for participants
               </p>
             </div>
-          ))}
+          </div>
+          <div className={`p-3 rounded-full bg-primary/10 border border-primary/30 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
+            <ChevronDown className="w-5 h-5 text-primary" />
+          </div>
+        </button>
+
+        {/* Dropdown Content */}
+        <div className={`transition-all duration-500 ease-in-out overflow-hidden ${isOpen ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+          <div className="px-6 pb-6 md:px-8 md:pb-8">
+            <div className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent mb-6" />
+            
+            <p className="text-foreground/70 mb-6 text-center">
+              Please read the following instructions carefully before registering for HACKFINITY:
+            </p>
+            
+            <div className="grid gap-3">
+              {instructions.map((instruction, index) => (
+                <div 
+                  key={index}
+                  className="group relative flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-background/80 to-background/60 border border-primary/10 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  {/* Techy Point Indicator */}
+                  <div className="flex-shrink-0 relative">
+                    <div className="w-3 h-3 rounded-full bg-gradient-to-br from-primary to-secondary group-hover:scale-125 transition-transform duration-300" />
+                    <div className="absolute inset-0 w-3 h-3 rounded-full bg-primary/50 blur-sm group-hover:blur-md transition-all" />
+                  </div>
+                  
+                  {/* Connector Line */}
+                  <div className="w-6 h-px bg-gradient-to-r from-primary/50 to-transparent group-hover:from-primary group-hover:w-8 transition-all duration-300" />
+                  
+                  <p className="text-foreground/80 leading-relaxed flex-1">
+                    {instruction}
+                  </p>
+                  
+                  {/* Hover Glow Effect */}
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -12,15 +12,15 @@ const faqs = [
   },
   {
     question: "What are the themes?",
-    answer: "There are 5 themes: Blockchain & Cybersecurity, FoodTech/MedTech/AgriTech, InfraTech & IoT, Space Tech, and Miscellaneous. Each theme has specific problem statements that teams can choose to work on.",
+    answer: "There are 5 themes: Viksit Bharat, AIML, Blockchain & Cybersecurity, FoodTech/MedTech/AgriTech, InfraTech & IoT, and Miscellaneous. Each theme has specific problem statements that teams can choose to work on.",
   },
   {
     question: "What is the team size?",
-    answer: "Teams can consist of 2-4 members. Individual participation is not allowed to encourage collaboration and teamwork.",
+    answer: "Teams must consist of exactly 4 members. Individual participation is not allowed to encourage collaboration and teamwork.",
   },
   {
     question: "What is the Miscellaneous theme?",
-    answer: "The Miscellaneous theme is for teams that showcase exceptional creativity and innovation. Teams under this theme will receive a surprise problem statement at the start of the hackathon and must develop a solution within the given time frame.",
+    answer: "The Miscellaneous category allows participants to solve any real-world problem of their choice. It encourages creative, flexible, and innovative tech solutions beyond the defined themes.",
   },
   {
     question: "Will food and accommodation be provided?",

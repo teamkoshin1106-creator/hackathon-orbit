@@ -135,9 +135,14 @@ const Registration = () => {
 
               {/* Submission Guidelines */}
               <div className="mt-12 glass-card p-8">
-                <h3 className="font-share-tech text-xl font-bold text-foreground mb-6">
+                <h3 className="font-share-tech text-xl font-bold text-foreground mb-4">
                   Submission Guidelines
                 </h3>
+                <div className="mb-6 p-4 rounded-xl bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20">
+                  <p className="text-foreground/80 text-center font-medium">
+                    ⚡ Please read the instructions carefully before registering for HACKFINITY.
+                  </p>
+                </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="p-4 rounded-xl bg-primary/5 border border-primary/10">
                     <h4 className="font-share-tech text-primary font-bold mb-2">Before the Event</h4>
